@@ -1,0 +1,79 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/communitySelect/index",
+			"style": {
+				"navigationBarTitleText": "社区选择",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/home/index",
+			"style": {
+				"navigationBarTitleText": "智慧社区"
+			}
+		},
+		{
+			"path": "pages/commonPhone/index",
+			"style": {
+				"navigationBarTitleText": "常用电话",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/mine/index",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		},
+		{
+			"path": "pages/notice/index",
+			"style": {
+				"navigationBarTitleText": "小区风采列表",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/login/index",
+			"style": {
+				"navigationBarTitleText": "登录"
+			}
+		},
+		{
+			"path": "pages/register/index",
+			"style": {
+				"navigationBarTitleText": "注册"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "智慧社区",
+		"navigationBarBackgroundColor": "#fff",
+		"backgroundColor": "#F6F8FA"
+	},
+	"tabBar": {
+		"borderStyle": "white",
+		"color": "#000",
+		"selectedColor": "#218EFF",
+		"list": [{
+				"pagePath": "pages/home/index",
+				"text": "首页",
+				"iconPath": "/static/tabbar/icon_home.png",
+				"selectedIconPath": "/static/tabbar/icon_home_sel.png"
+			},
+			{
+				"pagePath": "pages/commonPhone/index",
+				"text": "常用电话",
+				"iconPath": "/static/tabbar/icon_common.png",
+				"selectedIconPath": "/static/tabbar/icon_common_sel.png"
+			},
+			{
+				"pagePath": "pages/mine/index",
+				"text": "我的",
+				"iconPath": "/static/tabbar/icon_mine.png",
+				"selectedIconPath": "/static/tabbar/icon_mine_sel.png"
+			}
+		]
+	}
+}

@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/communitySelect/index",
+    "pages/home/index",
+    "pages/commonPhone/index",
+    "pages/mine/index",
+    "pages/notice/index",
+    "pages/login/index",
+    "pages/register/index"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "智慧社区",
+    "navigationBarBackgroundColor": "#fff",
+    "backgroundColor": "#F6F8FA"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "color": "#000",
+    "selectedColor": "#218EFF",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "首页",
+        "iconPath": "/static/tabbar/icon_home.png",
+        "selectedIconPath": "/static/tabbar/icon_home_sel.png"
+      },
+      {
+        "pagePath": "pages/commonPhone/index",
+        "text": "常用电话",
+        "iconPath": "/static/tabbar/icon_common.png",
+        "selectedIconPath": "/static/tabbar/icon_common_sel.png"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "text": "我的",
+        "iconPath": "/static/tabbar/icon_mine.png",
+        "selectedIconPath": "/static/tabbar/icon_mine_sel.png"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

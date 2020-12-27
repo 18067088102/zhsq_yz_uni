@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "智慧社区",
+  "usingComponents": {
+    "uni-empty": "/components/uni-empty/uni-empty"
+  }
+}

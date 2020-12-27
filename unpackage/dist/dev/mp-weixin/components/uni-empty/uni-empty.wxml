@@ -1,0 +1,1 @@
+<view class="empty_page data-v-356dc9a6" style="{{'background:'+(bgColor)+';'}}"><image class="empty_img data-v-356dc9a6" src="/static/common/icon_null_img.png"></image><text class="empty_text data-v-356dc9a6">{{emptyText}}</text></view>
