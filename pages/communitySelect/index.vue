@@ -16,7 +16,7 @@
 					<text class="address_text">{{item.address}}</text>
 				</view>
 			</view>
-			<uni-load-more v-if="!isNoData" :status="status"></uni-load-more>
+			<uni-load-more v-if="!isNoData&&isShowLoadMore" :status="status"></uni-load-more>
 		</view>
 	</view>
 </template>
@@ -44,6 +44,7 @@
 				page: 1,
 				pages: 0,
 				isNoData: false,
+				isShowLoadMore: false,
 				fromID: 0 //0: 刚启动时社区选择；1:社区选择时切换小区；2:首页头部切换房产(未认证)；
 			}
 		},
@@ -140,6 +141,7 @@
 						that.page = pageNo //当前的页号
 						that.pages = res.data.totalPage //总页数
 						that.listsItem = override ? list : that.listsItem.concat(list)
+						that.isShowLoadMore = that.listsItem.length < 10 ? false : true
 					} else {
 						uni.showToast({
 							title: res.msg,
@@ -174,13 +176,18 @@
 			if (this.loading && this.page == this.pages) {
 				this.status = 'noMore'
 			}
-		},
+		}
 	}
 </script>
 
 <style lang="scss" scoped>
 	.list_container {
+		// #ifdef MP 
 		margin-top: 130rpx;
+		// #endif 
+		// #ifdef APP-PLUS 
+		margin-top: 0rpx;
+		// #endif 
 		padding: 0 32rpx;
 	}
 

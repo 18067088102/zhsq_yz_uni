@@ -1935,59 +1935,10 @@ function normalizeComponent (
 
 /***/ }),
 
-/***/ 101:
-/*!**************************************************************!*\
-  !*** /Users/chinkohyou/Desktop/zhsq_yz_uni/common/common.js ***!
-  \**************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _api = _interopRequireDefault(__webpack_require__(/*! ./api.js */ 12));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-
-var common = {
-  isPhone: function isPhone(value) {
-    var regex = /^(13[0-9]{9})|(15[0-9]{9})|(17[0-9]{9})|(18[0-9]{9})|(19[0-9]{9})$/;
-    if (regex.test(value)) {
-      return true;
-    } else {
-      return false;
-    }
-  },
-  isPsd: function isPsd(value) {
-    var zg = /^[a-zA-Z0-9]+$/;
-    if (zg.test(value)) {
-      return true;
-    } else {
-      return false;
-    }
-  },
-  isChiness: function isChiness(value) {
-    var regName = /^[\u4e00-\u9fa5]{2,4}$/;
-    if (regName.test(value)) {
-      return true;
-    } else {
-      return false;
-    }
-  },
-  combineImageUrl: function combineImageUrl(imgPath) {
-    var imgUrl = _api.default.viewImgaeUrl + '?path=' + imgPath + '&token=' + uni.getStorageSync('token');
-    if (imgPath) {
-      return imgUrl;
-    } else {
-      return '';
-    }
-  } };var _default =
-
-common;exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-
 /***/ 11:
-/*!********************************************************************!*\
-  !*** /Users/chinkohyou/Desktop/zhsq_yz_uni/common/http-promise.js ***!
-  \********************************************************************/
+/*!******************************************************************!*\
+  !*** C:/Users/Lenovo/Desktop/zhsq_yz_uni/common/http-promise.js ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2063,25 +2014,131 @@ common;exports.default = _default;
 
 /***/ }),
 
+/***/ 115:
+/*!*************************************************************************!*\
+  !*** C:/Users/Lenovo/Desktop/zhsq_yz_uni/components/uni-icons/icons.js ***!
+  \*************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  'contact': "\uE100",
+  'person': "\uE101",
+  'personadd': "\uE102",
+  'contact-filled': "\uE130",
+  'person-filled': "\uE131",
+  'personadd-filled': "\uE132",
+  'phone': "\uE200",
+  'email': "\uE201",
+  'chatbubble': "\uE202",
+  'chatboxes': "\uE203",
+  'phone-filled': "\uE230",
+  'email-filled': "\uE231",
+  'chatbubble-filled': "\uE232",
+  'chatboxes-filled': "\uE233",
+  'weibo': "\uE260",
+  'weixin': "\uE261",
+  'pengyouquan': "\uE262",
+  'chat': "\uE263",
+  'qq': "\uE264",
+  'videocam': "\uE300",
+  'camera': "\uE301",
+  'mic': "\uE302",
+  'location': "\uE303",
+  'mic-filled': "\uE332",
+  'speech': "\uE332",
+  'location-filled': "\uE333",
+  'micoff': "\uE360",
+  'image': "\uE363",
+  'map': "\uE364",
+  'compose': "\uE400",
+  'trash': "\uE401",
+  'upload': "\uE402",
+  'download': "\uE403",
+  'close': "\uE404",
+  'redo': "\uE405",
+  'undo': "\uE406",
+  'refresh': "\uE407",
+  'star': "\uE408",
+  'plus': "\uE409",
+  'minus': "\uE410",
+  'circle': "\uE411",
+  'checkbox': "\uE411",
+  'close-filled': "\uE434",
+  'clear': "\uE434",
+  'refresh-filled': "\uE437",
+  'star-filled': "\uE438",
+  'plus-filled': "\uE439",
+  'minus-filled': "\uE440",
+  'circle-filled': "\uE441",
+  'checkbox-filled': "\uE442",
+  'closeempty': "\uE460",
+  'refreshempty': "\uE461",
+  'reload': "\uE462",
+  'starhalf': "\uE463",
+  'spinner': "\uE464",
+  'spinner-cycle': "\uE465",
+  'search': "\uE466",
+  'plusempty': "\uE468",
+  'forward': "\uE470",
+  'back': "\uE471",
+  'left-nav': "\uE471",
+  'checkmarkempty': "\uE472",
+  'home': "\uE500",
+  'navigate': "\uE501",
+  'gear': "\uE502",
+  'paperplane': "\uE503",
+  'info': "\uE504",
+  'help': "\uE505",
+  'locked': "\uE506",
+  'more': "\uE507",
+  'flag': "\uE508",
+  'home-filled': "\uE530",
+  'gear-filled': "\uE532",
+  'info-filled': "\uE534",
+  'help-filled': "\uE535",
+  'more-filled': "\uE537",
+  'settings': "\uE560",
+  'list': "\uE562",
+  'bars': "\uE563",
+  'loop': "\uE565",
+  'paperclip': "\uE567",
+  'eye': "\uE568",
+  'arrowup': "\uE580",
+  'arrowdown': "\uE581",
+  'arrowleft': "\uE582",
+  'arrowright': "\uE583",
+  'arrowthinup': "\uE584",
+  'arrowthindown': "\uE585",
+  'arrowthinleft': "\uE586",
+  'arrowthinright': "\uE587",
+  'pulldown': "\uE588",
+  'closefill': "\uE589",
+  'sound': "\uE590",
+  'scan': "\uE612" };exports.default = _default;
+
+/***/ }),
+
 /***/ 12:
-/*!***********************************************************!*\
-  !*** /Users/chinkohyou/Desktop/zhsq_yz_uni/common/api.js ***!
-  \***********************************************************/
+/*!*********************************************************!*\
+  !*** C:/Users/Lenovo/Desktop/zhsq_yz_uni/common/api.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
 // 生产
-var BASE_URL = 'https://live.cncqs.cn:8443/mpp/api/v1';
-var HOST_SERVER = BASE_URL + '/auth';
-var HOST_SERVER2 = BASE_URL + '/archives';
-var HOST_SERVER3 = BASE_URL + '/notification';
-var HOST_SERVER4 = BASE_URL + '/estate';
+// let BASE_URL = 'https://live.cncqs.cn:8443/mpp/api/v1';
+// let HOST_SERVER = BASE_URL + '/auth';
+// let HOST_SERVER2 = BASE_URL + '/archives';
+// let HOST_SERVER3 = BASE_URL + '/notification';
+// let HOST_SERVER4 = BASE_URL + '/estate';
 
 // 本地测试
-// let HOST_SERVER = 'http://192.168.1.170:7000';
-// let HOST_SERVER2 = 'http://192.168.1.170:7100';
-// let HOST_SERVER3 = 'http://192.168.1.170:7200';
-// let HOST_SERVER4 = 'http://192.168.1.170:7300';
+var HOST_SERVER = 'http://192.168.1.170:7000';
+var HOST_SERVER2 = 'http://192.168.1.170:7100';
+var HOST_SERVER3 = 'http://192.168.1.170:7200';
+var HOST_SERVER4 = 'http://192.168.1.170:7300';
 
 var api = { //共52个接口
   //共用 5
@@ -2167,14 +2224,52 @@ module.exports = api;
 
 /***/ }),
 
-/***/ 19:
-/*!**********************************************************!*\
-  !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
-  \**********************************************************/
+/***/ 13:
+/*!************************************************************!*\
+  !*** C:/Users/Lenovo/Desktop/zhsq_yz_uni/common/common.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! regenerator-runtime */ 20);
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _api = _interopRequireDefault(__webpack_require__(/*! ./api.js */ 12));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+var common = {
+  isPhone: function isPhone(value) {
+    var regex = /^(13[0-9]{9})|(15[0-9]{9})|(17[0-9]{9})|(18[0-9]{9})|(19[0-9]{9})$/;
+    if (regex.test(value)) {
+      return true;
+    } else {
+      return false;
+    }
+  },
+  isPsd: function isPsd(value) {
+    var zg = /^[a-zA-Z0-9]+$/;
+    if (zg.test(value)) {
+      return true;
+    } else {
+      return false;
+    }
+  },
+  isChiness: function isChiness(value) {
+    var regName = /^[\u4e00-\u9fa5]{2,4}$/;
+    if (regName.test(value)) {
+      return true;
+    } else {
+      return false;
+    }
+  },
+  combineImageUrl: function combineImageUrl(imgPath) {
+    var imgUrl = _api.default.viewImgaeUrl + '?path=' + imgPath + '&token=' + uni.getStorageSync('token');
+    if (imgPath) {
+      return imgUrl;
+    } else {
+      return '';
+    }
+  } };var _default =
+
+common;exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 
@@ -8226,6 +8321,17 @@ internalMixin(Vue);
 /***/ }),
 
 /***/ 20:
+/*!**********************************************************!*\
+  !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! regenerator-runtime */ 21);
+
+/***/ }),
+
+/***/ 21:
 /*!************************************************************!*\
   !*** ./node_modules/regenerator-runtime/runtime-module.js ***!
   \************************************************************/
@@ -8256,7 +8362,7 @@ var oldRuntime = hadRuntime && g.regeneratorRuntime;
 // Force reevalutation of runtime.js.
 g.regeneratorRuntime = undefined;
 
-module.exports = __webpack_require__(/*! ./runtime */ 21);
+module.exports = __webpack_require__(/*! ./runtime */ 22);
 
 if (hadRuntime) {
   // Restore the original runtime.
@@ -8273,7 +8379,7 @@ if (hadRuntime) {
 
 /***/ }),
 
-/***/ 21:
+/***/ 22:
 /*!*****************************************************!*\
   !*** ./node_modules/regenerator-runtime/runtime.js ***!
   \*****************************************************/
@@ -9037,119 +9143,13 @@ module.exports = g;
 /***/ }),
 
 /***/ 4:
-/*!********************************************************!*\
-  !*** /Users/chinkohyou/Desktop/zhsq_yz_uni/pages.json ***!
-  \********************************************************/
+/*!******************************************************!*\
+  !*** C:/Users/Lenovo/Desktop/zhsq_yz_uni/pages.json ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
 
-
-/***/ }),
-
-/***/ 86:
-/*!***************************************************************************!*\
-  !*** /Users/chinkohyou/Desktop/zhsq_yz_uni/components/uni-icons/icons.js ***!
-  \***************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  'contact': "\uE100",
-  'person': "\uE101",
-  'personadd': "\uE102",
-  'contact-filled': "\uE130",
-  'person-filled': "\uE131",
-  'personadd-filled': "\uE132",
-  'phone': "\uE200",
-  'email': "\uE201",
-  'chatbubble': "\uE202",
-  'chatboxes': "\uE203",
-  'phone-filled': "\uE230",
-  'email-filled': "\uE231",
-  'chatbubble-filled': "\uE232",
-  'chatboxes-filled': "\uE233",
-  'weibo': "\uE260",
-  'weixin': "\uE261",
-  'pengyouquan': "\uE262",
-  'chat': "\uE263",
-  'qq': "\uE264",
-  'videocam': "\uE300",
-  'camera': "\uE301",
-  'mic': "\uE302",
-  'location': "\uE303",
-  'mic-filled': "\uE332",
-  'speech': "\uE332",
-  'location-filled': "\uE333",
-  'micoff': "\uE360",
-  'image': "\uE363",
-  'map': "\uE364",
-  'compose': "\uE400",
-  'trash': "\uE401",
-  'upload': "\uE402",
-  'download': "\uE403",
-  'close': "\uE404",
-  'redo': "\uE405",
-  'undo': "\uE406",
-  'refresh': "\uE407",
-  'star': "\uE408",
-  'plus': "\uE409",
-  'minus': "\uE410",
-  'circle': "\uE411",
-  'checkbox': "\uE411",
-  'close-filled': "\uE434",
-  'clear': "\uE434",
-  'refresh-filled': "\uE437",
-  'star-filled': "\uE438",
-  'plus-filled': "\uE439",
-  'minus-filled': "\uE440",
-  'circle-filled': "\uE441",
-  'checkbox-filled': "\uE442",
-  'closeempty': "\uE460",
-  'refreshempty': "\uE461",
-  'reload': "\uE462",
-  'starhalf': "\uE463",
-  'spinner': "\uE464",
-  'spinner-cycle': "\uE465",
-  'search': "\uE466",
-  'plusempty': "\uE468",
-  'forward': "\uE470",
-  'back': "\uE471",
-  'left-nav': "\uE471",
-  'checkmarkempty': "\uE472",
-  'home': "\uE500",
-  'navigate': "\uE501",
-  'gear': "\uE502",
-  'paperplane': "\uE503",
-  'info': "\uE504",
-  'help': "\uE505",
-  'locked': "\uE506",
-  'more': "\uE507",
-  'flag': "\uE508",
-  'home-filled': "\uE530",
-  'gear-filled': "\uE532",
-  'info-filled': "\uE534",
-  'help-filled': "\uE535",
-  'more-filled': "\uE537",
-  'settings': "\uE560",
-  'list': "\uE562",
-  'bars': "\uE563",
-  'loop': "\uE565",
-  'paperclip': "\uE567",
-  'eye': "\uE568",
-  'arrowup': "\uE580",
-  'arrowdown': "\uE581",
-  'arrowleft': "\uE582",
-  'arrowright': "\uE583",
-  'arrowthinup': "\uE584",
-  'arrowthindown': "\uE585",
-  'arrowthinleft': "\uE586",
-  'arrowthinright': "\uE587",
-  'pulldown': "\uE588",
-  'closefill': "\uE589",
-  'sound': "\uE590",
-  'scan': "\uE612" };exports.default = _default;
 
 /***/ })
 

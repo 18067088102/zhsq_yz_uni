@@ -6,7 +6,9 @@
     "pages/mine/index",
     "pages/notice/index",
     "pages/login/index",
-    "pages/register/index"
+    "pages/register/index",
+    "pages/accountInfo/index",
+    "pages/changeNickname/index"
   ],
   "subPackages": [],
   "window": {

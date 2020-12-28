@@ -194,9 +194,9 @@
 					})
 					return
 				}
-				this.isLoading = true,
-					this.buttonText = that.fromID == 0 ? '注册中...' : '提交中...',
-					this.isDisable = true
+				this.isLoading = true
+				this.buttonText = that.fromID == 0 ? '注册中...' : '提交中...'
+				this.isDisable = true
 				this.onRegisterRequest()
 			},
 
@@ -215,17 +215,17 @@
 					},
 					token: ''
 				}).then(res => {
-					that.isLoading = false,
-						that.buttonText = that.fromID == 0 ? '注册' : '提交',
-						that.isDisable = false
+					that.isLoading = false
+					that.buttonText = that.fromID == 0 ? '注册' : '提交'
+					that.isDisable = false
 					if (res.code == 200) {
 						if (that.fromID == 0 || that.fromID == 1) {
 							var pages = getCurrentPages();
 							var currPage = pages[pages.length - 1]; //当前页面
 							var prevPage = pages[pages.length - 2];
-							prevPage.phoneNo = that.phoneNo,
-								prevPage.password = that.password,
-								prevPage.loginType = 1
+							prevPage.$vm.phoneNo = that.phoneNo
+							prevPage.$vm.password = that.password
+							prevPage.$vm.loginType = 1
 							prevPage.validateEmpty()
 							// prevPage.onLoginEvent()  //注册成功后自动登录
 						}
@@ -245,9 +245,9 @@
 						})
 					}
 				}).catch(err => {
-					that.isLoading = false,
-						that.buttonText = that.fromID == 0 ? '注册' : '提交',
-						that.isDisable = false
+					that.isLoading = false
+					that.buttonText = that.fromID == 0 ? '注册' : '提交'
+					that.isDisable = false
 				})
 			}
 		}

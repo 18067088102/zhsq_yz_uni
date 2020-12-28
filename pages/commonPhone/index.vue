@@ -1,5 +1,5 @@
 <template>
-	<view class="common_container">
+	<view class="common_container" style="padding: 0 32rpx;">
 		<view class="empty_container" v-if="isNoData">
 			<uni-empty :emptyText="emptyText"></uni-empty>
 		</view>
@@ -9,9 +9,19 @@
 					<text class="phone_text">{{item.phone}}</text>
 					<text class="name_text">{{item.name}}</text>
 				</view>
-				<image class="phone_img" src="/images/common/icon_hujiao.png" @click="onClickItem(item)"></image>
+				<image class="phone_img" src="/static/common/icon_hujiao.png" @click="onClickItem(item)"></image>
 			</view>
-			<uni-load-more v-if="!isNoData" :status="status"></uni-load-more>
+			<uni-load-more v-if="!isNoData&&isShowLoadMore" :status="status"></uni-load-more>
+		</view>
+		<view class="popup_box" :style="!isLogin?'':'background: #FCFAE5'" v-if="!isLogin||!isAuth">
+			<view class="box_left">
+				<image :style="!isLogin?'':'width: 29rpx'" class="popup_img" :src="!isLogin?'/static/common/icon_logo.png':'/static/common/icon_renzheng.png'"></image>
+				<text class="popup_text" :style="!isLogin?'':'color: #FF7A05'">{{!isLogin?'请登录，登录后查看更多信息':'您还未进行社区认证，请认证'}}</text>
+			</view>
+			<view>
+				<button :style="!isLogin?'':'background: #FF7A05;color: #FCFAE5;'" class="popup_btn shadow" :class="[animation == 'shake' ? 'animation-shake' : '']"
+				 @click="getUserInfo">{{!isLogin?'去登录':'去认证'}}</button>
+			</view>
 		</view>
 	</view>
 </template>
@@ -33,13 +43,53 @@
 				loading: true,
 				page: 1,
 				pages: 0,
-				isNoData: false
+				isNoData: false,
+				isShowLoadMore: false,
+				isLogin: true,
+				isAuth: true
 			}
 		},
-		onLoad() {
-			this.getCommonPhoneListRequest(1, true)
+		/**
+		 * 生命周期函数--监听页面显示
+		 */
+		onShow() {
+			var token = wx.getStorageSync('token')
+			if (token) {
+				this.getUserInfoRequest()
+			} else {
+				this.isLogin = false
+				this.isAuth = false
+			}
 		},
 		methods: {
+			/**
+			 * 获取账号信息
+			 */
+			async getUserInfoRequest() {
+				var that = this
+				return await that.$http(that.$api.queryUserInfoUrl, {
+					method: 'GET',
+					data: {},
+					token: uni.getStorageSync('token')
+				}).then(res => {
+					if (res.code == 200) {
+						var data = res.data
+						uni.setStorageSync('data', data)
+						if (data != null) {
+							uni.setStorageSync('villageName', res.data.villageName)
+							uni.setStorageSync('villageId', res.data.villageId)
+							that.isLogin = true
+							that.isAuth = true
+							that.getCommonPhoneListRequest(1, true)
+						} else {
+							that.isLogin = true
+							that.isAuth = false
+						}
+					}
+				}).catch(err => {
+					that.isNoData = true
+				})
+			},
 			/**
 			 * 拨打电话事件
 			 */
@@ -70,6 +120,7 @@
 						that.page = pageNo //当前的页号
 						that.pages = res.data.totalPage //总页数
 						that.listsItem = override ? list : that.listsItem.concat(list)
+						that.isShowLoadMore = that.listsItem.length < 10 ? false : true
 					} else {
 						uni.showToast({
 							title: res.msg,
@@ -80,7 +131,21 @@
 				}).catch(err => {
 					that.isNoData = true
 				})
-			}
+			},
+			/**
+			 * 登录、认证事件
+			 */
+			getUserInfo: function(e) {
+				if (!this.isLogin) {
+					uni.navigateTo({
+						url: '/pages/login/index',
+					})
+				} else {
+					uni.navigateTo({
+						url: '/pages/communityRegister/validation',
+					})
+				}
+			},
 		},
 		/**
 		 * 监听用户下拉动作
@@ -92,6 +157,18 @@
 				// 处理完成后，终止下拉刷新
 				uni.stopPullDownRefresh()
 			})
+		},
+		/**
+		 * 监听页面上拉触底事件
+		 */
+		onReachBottom: function() {
+			if (this.loading && this.page < this.pages) {
+				this.status = 'loading'
+				this.getCommonPhoneListRequest(this.page + 1)
+			}
+			if (this.loading && this.page == this.pages) {
+				this.status = 'noMore'
+			}
 		},
 	}
 </script>

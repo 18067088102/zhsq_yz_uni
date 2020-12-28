@@ -20,7 +20,7 @@
 		</view>
 		<view class="first-container">
 			<view class="upload-item" v-for="(item, index) in uploadMaps" :key="item.id" @click="onSwitchClick(index)">
-				<image class="upload-img" :src="getImageUrl(item.img)"></image>
+				<image class="upload-img" :src="`/static/common/${item.img}.png`"></image>
 				<text class="upload-text">{{item.title}}</text>
 			</view>
 		</view>
@@ -100,7 +100,7 @@
 				interval: 5000,
 				duration: 1000,
 				bannerList: ["/static/common/icon_banner.png"],
-				bannerList1: [],
+				// bannerList1: [],
 				bannerData: [],
 				uploadMaps: [{
 						img: "home_icon_fangke",
@@ -127,10 +127,10 @@
 				roomNum: '',
 				isLogin: true,
 				isAuth: true,
+				isNoData: true,
 				emptyText: '暂无小区风采...',
 				bgColor: '#FFFFFF',
-				animation: '',
-				isNoData: true,
+				animation: ''
 			}
 		},
 		/**
@@ -202,10 +202,13 @@
 								var imgUrl = that.$common.combineImageUrl(imgPath)
 								imgs.push(imgUrl)
 							}
-							that.bannerList1 = imgs
+							while (that.bannerList.legnth > 0) {
+								that.bannerList.splice(0, 1);
+							}
+							that.bannerList = imgs
 							that.bannerData = bannerData
 						} else {
-							that.bannerList1 = []
+							// that.bannerList = []
 							that.bannerData = []
 						}
 					}
@@ -333,7 +336,7 @@
 			 * 轮播图详情
 			 */
 			onClickBanner(idx) {
-				if (this.bannerList1.length != 0) {
+				if (this.bannerList.length != 0) {
 					const id = this.bannerData[idx].linkId
 					const linkType = this.bannerData[idx].linkType
 					switch (linkType) {
@@ -436,13 +439,13 @@
 				})
 			}
 		},
-		computed: {
-			getImageUrl() {
-				return function(imgStr) {
-					return `/static/common/${imgStr}.png`
-				}
-			}
-		}
+		// computed: {
+		// 	getImageUrl() {
+		// 		return function(imgStr) {
+		// 			return `/static/common/${imgStr}.png`
+		// 		}
+		// 	}
+		// }
 	}
 </script>
 
