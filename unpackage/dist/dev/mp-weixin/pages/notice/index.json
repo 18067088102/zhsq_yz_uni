@@ -2,6 +2,7 @@
   "navigationBarTitleText": "小区风采列表",
   "enablePullDownRefresh": true,
   "usingComponents": {
-    "uni-empty": "/components/uni-empty/uni-empty"
+    "uni-empty": "/components/uni-empty/uni-empty",
+    "uni-load-more": "/components/uni-load-more/uni-load-more"
   }
 }

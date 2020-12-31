@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "社区登记",
+  "usingComponents": {
+    "uni-upload-image": "/components/uni-upload-image/uni-upload-image"
+  }
+}

@@ -37,8 +37,8 @@
 				emptyText: '暂无社区数据...',
 				status: 'more',
 				keyword: '',
-				lat: '',
-				lng: '',
+				lat: '31.8877',
+				lng: '117.46928',
 				listsItem: [],
 				loading: true,
 				page: 1,
@@ -81,8 +81,8 @@
 					type: 'wgs84',
 					geocode: true, //设置该参数为true可直接获取经纬度及城市信息
 					success: (res) => {
-						that.lat = res.latitude
-						that.lng = res.longitude
+						that.lat = res.latitude.toString()
+						that.lng = res.longitude.toString()
 						that.getCommunityList(1, true)
 					},
 					fail: () => {
@@ -111,12 +111,38 @@
 			 * 点击选择社区事件
 			 */
 			onClickItem(item) {
-				// console.log(item)
-				uni.setStorageSync('villageName', item.name)
-				uni.setStorageSync('villageId', item.id)
-				uni.switchTab({
-					url: '/pages/home/index',
-				})
+				if (this.fromID == 0) {
+					uni.setStorageSync('villageName', item.name)
+					uni.setStorageSync('villageId', item.id)
+					uni.switchTab({
+						url: '/pages/home/index',
+					})
+				} else {
+					if (this.fromID == 1) {
+						var pages = getCurrentPages();
+						var currPage = pages[pages.length - 1]; //当前页面
+						var prevPage = pages[pages.length - 2];
+						prevPage.$vm.villageName = item.name
+						prevPage.$vm.villageId = item.id
+						prevPage.$vm.buildingName = ''
+						prevPage.$vm.buildingId = ''
+						prevPage.$vm.buildingIdArr = []
+						prevPage.$vm.index2 = null
+						prevPage.$vm.picker2 = []
+						prevPage.$vm.roomName = ''
+						prevPage.$vm.roomId = ''
+						prevPage.$vm.roomIdArr = []
+						prevPage.$vm.index3 = null
+						prevPage.$vm.picker3 = []
+						this.$utils.$emit('refreshBuildingList')
+					} else {
+						uni.setStorageSync('villageName', item.name)
+						uni.setStorageSync('villageId', item.id)
+					}
+					uni.navigateBack({
+						delta: 1,
+					})
+				}
 			},
 			/**
 			 * 获取社区列表数据

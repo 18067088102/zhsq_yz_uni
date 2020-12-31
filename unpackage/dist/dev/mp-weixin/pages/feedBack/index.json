@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "意见反馈",
+  "usingComponents": {
+    "uni-upload-image": "/components/uni-upload-image/uni-upload-image"
+  }
+}

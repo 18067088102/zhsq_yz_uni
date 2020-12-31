@@ -1,14 +1,16 @@
 import Vue from 'vue'
 import App from './App'
-import http from '@/common/http-promise.js'
-import api from '@/common/api.js'
-import common from '@/common/common.js'
+import http from '@/common/js/http-promise.js'
+import api from '@/common/js/api.js'
+import common from '@/common/js/common.js'
+import utils from '@/common/js/utils.js'
 
 Vue.config.productionTip = false
 
 Vue.prototype.$http = http
 Vue.prototype.$api = api
 Vue.prototype.$common = common
+Vue.prototype.$utils = utils
 
 App.mpType = 'app'
 

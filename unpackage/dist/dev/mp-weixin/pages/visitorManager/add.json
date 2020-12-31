@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "新增访客",
+  "usingComponents": {
+    "uni-upload-image": "/components/uni-upload-image/uni-upload-image"
+  }
+}

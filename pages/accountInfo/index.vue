@@ -67,7 +67,7 @@
 			onClickItem(idx) {
 				if (idx == 1) {
 					uni.navigateTo({
-						url: '/pages/changeNickname/index',
+						url: '/pages/accountInfo/changeNickname',
 					})
 				} else if (idx == 2) {
 					uni.navigateTo({

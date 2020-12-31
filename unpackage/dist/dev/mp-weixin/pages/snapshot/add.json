@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "添加物业报修",
+  "usingComponents": {
+    "uni-upload-image": "/components/uni-upload-image/uni-upload-image"
+  }
+}

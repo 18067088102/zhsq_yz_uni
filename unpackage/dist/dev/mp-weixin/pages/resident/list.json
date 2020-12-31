@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "住户管理",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "uni-empty": "/components/uni-empty/uni-empty"
+  }
+}

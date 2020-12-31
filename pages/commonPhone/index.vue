@@ -46,7 +46,8 @@
 				isNoData: false,
 				isShowLoadMore: false,
 				isLogin: true,
-				isAuth: true
+				isAuth: true,
+				animation: ''
 			}
 		},
 		/**

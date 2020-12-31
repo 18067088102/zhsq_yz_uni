@@ -88,14 +88,15 @@
 				nameTitle: '',
 				detailTitle: '',
 				faceImgPath: '',
-				faceImgUrl: ''
+				faceImgUrl: '',
+				animation: ''
 			}
 		},
 		/**
 		 * 生命周期函数--监听页面显示
 		 */
 		onShow() {
-			var token = wx.getStorageSync('token')
+			var token = uni.getStorageSync('token')
 			if (token) {
 				this.getUserInfoRequest()
 			} else {
@@ -198,13 +199,11 @@
 					uni.navigateTo({
 						url: '/pages/login/index',
 					})
-				}
-				if (!this.isAuth) {
+				}else if (!this.isAuth) {
 					uni.navigateTo({
 						url: '/pages/communityRegister/validation',
 					})
-				}
-				if (this.isLogin && this.isAuth) {
+				}else if (this.isLogin && this.isAuth) {
 					uni.navigateTo({
 						url: '/pages/accountInfo/index',
 					})
@@ -234,7 +233,7 @@
 							path = '/pages/face/index'
 							break;
 						case '1-2':
-							path = '/pages/house/list'
+							path = '/pages/house/index'
 							break;
 						case '1-3':
 							path = '/pages/vehicle/list'

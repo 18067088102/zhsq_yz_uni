@@ -85,6 +85,12 @@
 		onLoad() {
 			this.phoneNo = uni.getStorageSync('phoneNo')
 		},
+		mounted() {
+			var that = this;
+			that.$utils.$on('validateEmpty', () => {
+				that.validateEmpty();
+			})
+		},
 		methods: {
 			changeActive(e) {
 				this.loginType = e.currentTarget.dataset.id

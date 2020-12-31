@@ -250,7 +250,7 @@
 					url = '/pages/communitySelect/index?fromID=2'
 				} else {
 					if (this.isAuth) {
-						url = '/pages/house/list?fromID=1'
+						url = '/pages/house/index?fromID=1'
 					} else {
 						url = '/pages/communitySelect/index?fromID=2'
 					}
@@ -313,7 +313,7 @@
 				if (loginStatus && authStatus) {
 					switch (index) {
 						case 0:
-							path = '/pages/visitorManager/index'
+							path = '/pages/visitorManager/list'
 							break;
 						case 1:
 							path = '/pages/livePayment/index'

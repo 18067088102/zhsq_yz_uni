@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "我的房产",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "uni-empty": "/components/uni-empty/uni-empty"
+  }
+}

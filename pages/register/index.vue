@@ -195,7 +195,7 @@
 					return
 				}
 				this.isLoading = true
-				this.buttonText = that.fromID == 0 ? '注册中...' : '提交中...'
+				this.buttonText = this.fromID == 0 ? '注册中...' : '提交中...'
 				this.isDisable = true
 				this.onRegisterRequest()
 			},
@@ -226,8 +226,7 @@
 							prevPage.$vm.phoneNo = that.phoneNo
 							prevPage.$vm.password = that.password
 							prevPage.$vm.loginType = 1
-							prevPage.validateEmpty()
-							// prevPage.onLoginEvent()  //注册成功后自动登录
+							that.$utils.$emit('validateEmpty')
 						}
 						uni.showToast({
 							title: that.fromID == 0 ? '注册成功' : '提交成功',
@@ -255,5 +254,5 @@
 </script>
 
 <style>
-	@import "../../fr.css";
+	@import "../../common/css/fr.css";
 </style>

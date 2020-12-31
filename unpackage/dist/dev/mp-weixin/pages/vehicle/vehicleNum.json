@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "车牌号",
+  "usingComponents": {
+    "uni-keyboard": "/components/uni-keyboard/uni-keyboard"
+  }
+}

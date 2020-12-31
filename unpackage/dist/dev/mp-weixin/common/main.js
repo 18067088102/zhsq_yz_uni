@@ -9,15 +9,17 @@
 "use strict";
 /* WEBPACK VAR INJECTION */(function(createApp) {__webpack_require__(/*! uni-pages */ 4);var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));
 var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ 5));
-var _httpPromise = _interopRequireDefault(__webpack_require__(/*! @/common/http-promise.js */ 11));
-var _api = _interopRequireDefault(__webpack_require__(/*! @/common/api.js */ 12));
-var _common = _interopRequireDefault(__webpack_require__(/*! @/common/common.js */ 13));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+var _httpPromise = _interopRequireDefault(__webpack_require__(/*! @/common/js/http-promise.js */ 11));
+var _api = _interopRequireDefault(__webpack_require__(/*! @/common/js/api.js */ 12));
+var _common = _interopRequireDefault(__webpack_require__(/*! @/common/js/common.js */ 13));
+var _utils = _interopRequireDefault(__webpack_require__(/*! @/common/js/utils.js */ 14));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
 
 _vue.default.config.productionTip = false;
 
 _vue.default.prototype.$http = _httpPromise.default;
 _vue.default.prototype.$api = _api.default;
 _vue.default.prototype.$common = _common.default;
+_vue.default.prototype.$utils = _utils.default;
 
 _App.default.mpType = 'app';
 
@@ -94,17 +96,52 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 {
   onLaunch: function onLaunch() {
-    console.log('App Launch');
+    uni.getSystemInfo({
+      success: function success(e) {
+
+
+
+
+
+
+
+
+
+
+        _vue.default.prototype.StatusBar = e.statusBarHeight;
+        var custom = wx.getMenuButtonBoundingClientRect();
+        //导航高度
+        var statusBarHeight = e.statusBarHeight,
+        navTop = custom.top,
+        navHeight = statusBarHeight + custom.height + (custom.top - statusBarHeight) * 2;
+        _vue.default.prototype.navHeight = navHeight;
+        _vue.default.prototype.navTop = navTop;
+        _vue.default.prototype.windowWidth = e.windowWidth;
+        _vue.default.prototype.windowHeight = e.windowHeight;
+        _vue.default.prototype.screenHeight = e.screenHeight;
+
+        _vue.default.prototype.Custom = custom;
+        _vue.default.prototype.CustomBar = custom.bottom + custom.top - e.statusBarHeight;
+
+
+
+
+
+
+      } });
+
   },
   onShow: function onShow() {
-    console.log('App Show');
+    // console.log('App Show')
   },
   onHide: function onHide() {
-    console.log('App Hide');
+    // console.log('App Hide')
   } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 /* 8 */
