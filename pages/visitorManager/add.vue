@@ -43,7 +43,7 @@
 				{{imgList.length}}/1
 			</view>
 		</view>
-		<uni-upload-image maxLength="1" class="upload_view" @getPictures="onGetPictures" @deletePicture="onDeletePicture" />
+		<uni-upload-image :maxLength="1" class="upload_view" @getPictures="onGetPictures" @deletePicture="onDeletePicture" />
 		<view class="tip_view">
 			<text class="tip_text">注：请拍照或上传本人清晰头像，以确保刷脸开门的通过率</text>
 		</view>

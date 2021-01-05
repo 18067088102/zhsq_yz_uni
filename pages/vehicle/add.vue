@@ -29,7 +29,7 @@
 		</view>
 		<view class="cu-form-group solid-bottom" @click="onVehicleNum">
 			<view class="title"><text style="color: #FF2553;">*</text> 车牌号</view>
-			<picker :value="item.detail_title" disabled>
+			<picker disabled>
 				<view class="picker" :class="vehicleNum!=''?'color2':'color1'">
 					{{vehicleNum!=''?vehicleNum:'请选择'}}
 				</view>

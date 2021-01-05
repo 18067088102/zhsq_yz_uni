@@ -196,7 +196,7 @@
 			},
 
 			//编辑时删除图片的操作
-			DelImg(e) {
+			DelImg(index) {
 				uni.showModal({ //先进行弹框提示，用户点确认后再进行删除操作
 					content: '确定要删除该图片吗？',
 					cancelText: '再想想',
@@ -205,8 +205,8 @@
 					confirmColor: '#218EFF',
 					success: res => {
 						if (res.confirm) { //删除本地展示图片及后台返回的已上传图片的地址
-							this.imgList.splice(e.currentTarget.dataset.index, 1);
-							this.pictures.splice(e.currentTarget.dataset.index, 1);
+							this.imgList.splice(index, 1);
+							this.pictures.splice(index, 1);
 							//删除成功后及时刷新展示区域
 							this.imgList = this.imgList
 							this.pictures = this.pictures
